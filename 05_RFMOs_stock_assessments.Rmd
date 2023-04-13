@@ -6,4 +6,4 @@ output: html_document
 ---
 
 
-Check ICCAT and CGPM (med) websites --> extracted manually
+Check ICCAT and CGPM (med) websites --> extracted manually, and saved in an excel
