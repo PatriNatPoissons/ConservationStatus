@@ -1,0 +1,183 @@
+---
+title: "06_Format_and_bind_all_tables"
+author: "Pauline"
+date: '2022-06-22'
+output: html_document
+---
+
+# Purpose
+Before creating the html version of the final matrix, you need to bind all the tables produced in the previous scripts to have your final df. To do so, you need to format them (same column names, same column types, etc. etc.). This is what this document does.
+
+```{r setup, include = F}
+library(tidyverse)
+library(readxl)
+library(writexl)
+
+#select species (take 'commentaire' to have outdated names as well) for FC1 OSPAR
+elasmo_FR <- read.csv("data\\elasmo_uicn_france.csv") %>% mutate(Genre = word(.$Species, 1))
+species_names <- c(elasmo_FR$Species, elasmo_FR$Species) %>% unique() %>% na.exclude()
+species_genre <- paste0(unique(elasmo_FR$Genre), " spp") %>% na.exclude()
+species_all <- c(species_names, species_genre)
+
+#file with the corrected common names, used at the end of the doc for adding the common names
+names_elasmo <- read_xlsx("data/Elasmobranches_présents_FR.xlsx") %>% rename(Species = Espèce, Name_FR = "Nom commun", Name_EN = "Nom anglais")
+```
+
+# Load and format data
+Logically, you load the documents produced at the very end of each script and stored in the data folder.
+I mutate everything to character at the end to make sure the binding will work.
+
+## UICN historical table
+This one is ready for binding and it will be the model for the rest (for variable names etc.).
+```{r data}
+#IUCN historical table
+Elasmobranchs_IUCN_historical_status <- read.csv("data\\Elasmobranchs_IUCN_historical_status.csv", encoding = "UTF-8", check.names = F) %>%
+   mutate_all(as.character)
+
+#last little correction to old statuses
+Elasmobranchs_IUCN_historical_status[Elasmobranchs_IUCN_historical_status == "nt"] <- "NT"
+Elasmobranchs_IUCN_historical_status[Elasmobranchs_IUCN_historical_status == "LR/nt"] <- "NT"
+```
+
+## Conventions
+This one needs to have only one column for all appendices, separated by comas. The goal is to reduce information to bind it to the finale table.
+```{r}
+Appendices <- read.csv("data\\Species_cited_in_appendices.csv", check.names = F, sep = ",")
+
+#Appendices table to long format
+Appendices[Appendices == "1"] <- "" #turn 1s to empty character strings
+
+Appendices_long <- Appendices %>% 
+  select(-CITES_listing_year, -CITES_EU_listing, -CITES_party) %>% #we don't need these columns : for CITES keep only CITES_appendix
+  rename(Bern = BERN_appendix, 
+         Barcelona = Barcelona_appendix, 
+         Washington = CITES_appendix, 
+         "Bonn - CMS" = CMS_appendix,
+         "Sharks MoU" = Shark.MoU) %>%
+  mutate_all(as.character) %>%
+  pivot_longer(cols = "Washington" : "Sharks MoU", names_to = "Conventions", values_to = "Détail", values_drop_na = T) %>%
+  unite(Conventions:"Détail", col = Conventions, remove = TRUE, sep = " ", na.rm = T) %>%
+  pivot_wider(values_from = "Conventions", names_from = "Conventions") %>% #group by wasn't working
+  unite("Washington II" : "Washington I", col = Conventions, remove = T, sep = ", ", na.rm = T) %>%
+   mutate_all(as.character)
+```
+
+## OSPAR
+```{r}
+#OSPAR Status
+##POSH
+Status_OSPAR <- read.csv("data\\Status_OSPAR.csv", check.names = F, sep = ";") #to have symbols
+
+##FC1 --Got this one from the DCSMM team in the Museum, it hasn't been published yet
+FC1_OSPAR <- readxl::read_xlsx("data\\FC1_integrated_outcomes.xlsx")
+
+#Add OSPAR status for french waters (II to IV)
+POSH <- Status_OSPAR %>% filter(Region %in% c("II", "III", "IV", "II*")) %>%
+  mutate(Region = case_when( #rename regions
+    Region == "II" | Region == "II*" ~ "OSPAR II - GNS (POSH)",
+    Region == "III" ~ "OSPAR III - CS (POSH)",
+    Region == "IV" ~ "OSPAR IV - BBIC (POSH)"
+  )) %>%
+  mutate("2021" = Last_status) %>% #add a column with year as name as in elasmo table
+  select(-Year) %>% #and drop the year column
+  select(-Common_name) %>%
+  mutate(Level = "Regional") %>%
+  mutate_all(as.character) %>%
+  left_join(., names_elasmo[c("Species", "Name_FR","Name_EN")])
+  
+
+#FC1
+FC1 <- FC1_OSPAR %>% filter(species %in% species_all) %>% filter(variable == "Long") %>% #keep only long term trend
+  mutate(msfd.region = case_when(
+    msfd.region == "BBIC" ~ "OSPAR IV - BBIC (FC1)",
+    msfd.region == "GNS" ~ "OSPAR II - GNS (FC1)",
+    msfd.region == "CS" ~ "OSPAR III - CS (FC1)"
+  )) %>%
+  mutate("2022" = bi.res) %>%
+  rename("Species" = species, "Region" = msfd.region, "Last_status" = bi.res) %>% 
+  select(Species, Region, Last_status, "2022") %>%
+  mutate(Level = "Regional", Last_evaluation = "2022") %>%
+  mutate(Last_status = str_to_title(Last_status)) %>%
+  left_join(., names_elasmo[c("Species", "Name_FR", "Name_EN")]) %>%
+   mutate_all(as.character)
+```
+
+## ICES
+```{r}
+#stock categories
+ICES_stock_cat <- read_xlsx("data\\ICES_stock_cat.xlsx") %>% left_join(., names_elasmo[c("Species", "Name_FR", "Name_EN")]) %>% relocate(c("Name_FR", "Name_EN"), .after = Species)
+write_xlsx(ICES_stock_cat, "data\\ICES_stock_cat.xlsx")
+
+#Ices advice
+ICES_advice <- read_xlsx("data\\ICES_advice_history_updated.xlsx") #drop 1st id col
+
+#need to have this somewhere 
+ICES_qualitative <- ICES_advice %>% filter(is.na(Stock_size_qualitative) == F) %>% select(Species, Stock_size_qualitative, Stock, "Eco Region", Year) %>%
+  pivot_wider(names_from = Year, values_from = Stock_size_qualitative) %>%
+  relocate(Stock, .before = Species) 
+
+#export and add regions manually from the ecoregion text and the stock's name (sorry, didn't find a better way)
+#writexl::write_xlsx(ICES_qualitative, "data\\ICES_qualitative_stock_eval.xlsx")
+
+#import again
+ICES_qualitative <- read_xlsx("data\\ICES_qualitative_stock_eval.xlsx") %>%
+  select(-"Eco Region") %>%
+  mutate(Region = case_when(
+    Region == "NE Atlantic" ~ "NE Atlantic (ICES)",
+    Region == "GNS" ~ "GNS (ICES)",
+    Region == "CS (North)" ~ "Northern CS (ICES)",
+    Region == "CS (South)" ~ "Southern CS (ICES)",
+    Region == "BBIC (North)" ~ "Northern BBIC (ICES)",
+    Region == "BBIC (South)" ~ "Southern BBIC (ICES)",
+    Region == "CS" ~ "CS (ICES)"
+  ),
+  Level = "Regional",
+  Last_status = ifelse(is.na(`2019`), `2018`, `2019`)) %>% 
+  mutate(Last_status = str_to_title(Last_status)) %>%
+  select(-Stock) %>%
+ left_join(.,names_elasmo[c("Species", "Name_FR", "Name_EN")]) %>% relocate(c("Name_FR", "Name_EN"), .after = "Species") %>%
+   mutate_all(as.character)
+
+#finally replace inc and dec by full words
+ICES_qualitative[ICES_qualitative == "Inc"] <- "Increasing"
+ICES_qualitative[ICES_qualitative == "Dec"] <- "Declining"
+ICES_qualitative[ICES_qualitative == "inc"] <- "Increasing"
+ICES_qualitative[ICES_qualitative == "dec"] <- "Declining"
+ICES_qualitative[ICES_qualitative == "stable"] <- "Stable"
+ICES_qualitative[ICES_qualitative == "very low"] <- "Very low"
+ICES_qualitative[ICES_qualitative == "depleted"] <- "Depleted"
+```
+
+## RFMOs
+```{r}
+#add ices and iccat
+ICCAT_GFCM <- read.csv("data\\Status_ICCAT_GFCM.csv", sep = ";") %>%
+  mutate(Last_evaluation = Year) %>%
+  pivot_wider(values_from = Last_status, names_from = Year) %>%
+  mutate(Region = case_when(
+    Region == "NE Atlantic" ~ "NE Atlantic (ICCAT)",
+    Region == "Ligurian and Tyrrhenian Seas" ~ "Ligurian and Tyrrhenian Seas (GFCM)" 
+  ),
+  Level = "Regional",
+  Last_status = coalesce(`2019`, `2015`, `2009`, `2010`)) %>%
+  select(-variable) %>%
+  left_join(.,names_elasmo[c("Species", "Name_FR", "Name_EN")]) %>% relocate(c("Name_FR", "Name_EN"), .after = "Species") %>%
+  mutate_all(as.character)
+```
+
+# Bind all together
+```{r}
+#do it step by step
+Elasmobranchs_final_table <- full_join(Elasmobranchs_IUCN_historical_status, Appendices_long) %>% 
+  relocate("Conventions", .after = "Name_EN") %>%
+  full_join(., FC1) %>%
+  full_join(., POSH) %>%
+  full_join(., ICES_qualitative) %>%
+   full_join(., ICCAT_GFCM) %>%
+  drop_na(Last_status) %>% unique() %>% #make sure you have only valid rows
+  arrange(Species, Level, Region, Last_status) %>%
+  relocate(`2022`, .after = `2021`) %>% relocate(`2009`, .after = `2008`) #check that the year columns are in the right order !
+
+#export the final table
+write_xlsx(Elasmobranchs_final_table, "data\\Elasmobranchs_final_table.xlsx")
+```

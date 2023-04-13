@@ -1,0 +1,62 @@
+---
+title: "Convention_appendices"
+author: "Pauline"
+date: '2022-05-06'
+output: 
+  html_document: 
+    toc: TRUE
+---
+This file simply selects and exports all species present in conventions' appendices :  
+* Barcelona_appendix : Convention for the Protection of the Mediterranean Sea Against Pollution (https://www.unep.org/unepmap/what-we-do). One assesment for elamsobranchs in 2007.
+* BERN_appendix : Convention on the Conservation of European Wildlife and Natural Habitats (https://www.coe.int/en/web/bern-convention/home), indicator of status = appendix
+* CITES : Convention on International Trade in Endangered Species of Wild Fauna and Flora (https://cites.org/eng), indicator of status = appendix
+* CMS : Convention on the Conservation of Migratory Species of Wild Animals (https://www.cms.int/), indicator of status = appendix
+* GROMS_migratory sp : database linked to CMS aka Bonn convention
+* OSPAR : oslo-paris convention, own status by zone
+* Shark.MoU : part of CMS dedicated to migratory sharks, indicator of status = appendix
+* UNCLOS : United Nations Convention on the Law of the Sea, no species' assessments
+
+```{r setup, include=FALSE}
+#knitting options
+knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+
+#Load packages
+##general
+library(tidyverse)
+library(readxl)
+
+##for the html output
+library(knitr)
+```
+
+# Assesments from conventions
+```{r conventions}
+#elasmo_fr
+elasmo_FR <- read.csv("data\\elasmo_uicn_france.csv")
+
+#list of species names
+species_names <- elasmo_FR$Species
+
+#file with the corrected common names, used at the end of the doc for adding the common names
+names_elasmo <- read_xlsx("data/Elasmobranches_présents_FR.xlsx") %>% rename(Species = Espèce, Name_FR = "Nom commun", Name_EN = "Nom anglais")
+
+#oegelund nielsen's database
+OegNiel_conventions <- read_excel("data/oegelund_nielsen_data.xlsx") %>% filter(Species %in% species_names) %>%
+  select(Species, 11:20) %>%
+  na_if("NA") %>% na_if(0) #for easier filtering after
+```
+
+## Conventions with appendices {#ConventionAppendices}
+32 species are present in at least one appendix of Bern, Barcelona, CITES, Bonne
+```{r appendices}
+#only CITES has a listing year
+OegNiel_appendices <- OegNiel_conventions %>%
+  filter_at(vars(2:length(.)), any_vars(!is.na(.))) %>% #keep only species that are present in at least one appendix
+  left_join(., names_elasmo[c("Species", "Name_FR", "Name_EN")], by = "Species") %>% #add common names
+  relocate(c("Name_FR", "Name_EN"), .after = Species)
+
+#export
+write_excel_csv(OegNiel_appendices, file = "data/Species_cited_in_appendices.csv")
+```
+
+Remarks : I added by hand in the excel table whether they were part of the RFMOs' (ICCAT and GFCM, fishing organisations) listings.

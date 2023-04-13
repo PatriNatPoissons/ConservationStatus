@@ -1,0 +1,200 @@
+---
+title: "ICES_advice"
+author: "Pauline"
+date: '2022-05-05'
+output:
+    html_document:
+      toc: TRUE
+---
+> Prerequisite : you'll need the 'tabulizer' package to run this code. All instructions to download the package are available on https://github.com/ropensci/tabulizer.
+
+```{r setup, include=FALSE}
+#set chunk options for html output
+knitr::opts_chunk$set(echo = TRUE)
+
+#base packages
+library(tidyverse)
+library(readxl)
+
+#for url
+library(RCurl)
+
+#package to extract info from pdf files: https://github.com/ropensci/tabulizer
+library(tabulizer)
+
+#package to produce html tables
+library(reactablefmtr)
+```
+
+# Load data
+We want to extract information for all the stocks evaluated by the "working group on elasmobranch species".The stocks' list we use for data extraction comes from an excel file dowloaded on the ICES website : <https://sid.ices.dk/Default.aspx>. You simply have to select "export as excel".   
+```{r data}
+#import the excel file
+WGEF <- read_excel("data\\FilteredStocklist_WGEF.xlsx") %>% rename(Stock = `Stock Key Label`)
+
+#extract list of stocks
+stocks <- WGEF$Stock
+```
+
+# Download the latest stock advice files from the ices website published since 2018
+It's possible thanks to their straightforward url: .../year/year/stock.pdf !  
+
+*If you want to keep ALL files published since 2018, simply add the year [i] in the file name to keep (for instance by adding "_", i, in the paste argument. There is for sure a faster way to run this loop and to store only the latest file instead of overwriting. Since I needed to do it only once, I kept the easy version that worked.*
+
+```{r}
+for(i in 2018:2022){
+  for(j in 1:length(stocks)){
+    stock <- stocks[j]
+    url <- paste("https://www.ices.dk/sites/pub/Publication%20Reports/Advice/",i, "/", i, "/", stock, ".pdf", sep = "")
+    
+    #check if url exists
+    if(url.exists(url)==T){
+       download.file(url, paste("ICES_advice\\", stock, ".pdf", sep =""), mode = "wb")
+    }
+}
+}
+```
+
+# Extract info from all files
+  
+The 'extract_table' function from the 'tabulizer' package extracts tables from pdf files. However, it's not perfect and there are many possible errors. The loop below has several 'if' statements to cover all possible scenarios of error (mainly: not detecting the columns). Still, the final dataset contains error and will need to be checked and corrected by hand...  
+
+## Extract stock category
+```{r stock_category}
+#initialize empty tibble
+ICES_stock_cat <- tibble()
+
+NE <- extract_tables(file = "~\\Ireland - Red List 11 Sharks et al.pdf", method= "decide", output = "data.frame", pages = c(1))
+
+##loop over species
+for(j in 1:length(stocks)){
+  #select the stock
+  stock <- stocks[j]
+  stock_file <- paste("ICES_advice\\", stock, ".pdf", sep ="")
+  
+  #extract all tables
+  stock_list <- extract_tables(
+    file   = stock_file, 
+    method = "decide", 
+    output = "data.frame")
+  
+
+  stock_list_match <- stock_list[grepl("ICES.stock.data.category" , stock_list, fixed = T)] #match pattern
+  
+  #turn to tibble and extract the colname
+  if(length(stock_list_match) > 0){
+   stock_category <- stock_list_match[[1]] %>% as_tibble() %>% 
+    colnames() %>% str_extract(pattern="[[:digit:]]") %>% as_tibble() %>% drop_na() %>% pull(value) 
+  } else{
+    stock_category <- NA #in case it didn't find the pattern
+  }
+   
+  #bind with stock
+  stock_category <- cbind(stock, stock_category) %>% as_tibble()
+  
+  #bind with big df
+  ICES_stock_cat <- bind_rows(ICES_stock_cat, stock_category)
+}
+
+#there are some where it extracted two values
+ICES_stock_cat <- ICES_stock_cat %>% group_by(stock) %>% summarise(stock_category = first(stock_category))
+  
+#export as csv
+write.csv(ICES_stock_cat, "data/ICES_stock_category.csv")
+```
+
+## Extract status history
+```{r status_history}
+#initiate empty tibble to store results
+ICES_advice <- tibble()
+
+for(j in 1:length(stocks)){
+  #select the file
+  stock <- stocks[j]
+  stock_file <- paste("ICES_advice\\", stock, ".pdf", sep ="")
+  
+  #extract all tables
+  stock_list <- extract_tables(
+    file   = stock_file, 
+    method = "decide", 
+    output = "data.frame")
+ 
+  #extract the history of advice catch and management since 2018
+  if(is.null(dim(stock_list[grepl("ICES.advice" , stock_list, fixed = T)])) == F){ #if he finds the pattern as is
+    
+    stock_list_match <- stock_list[grepl("ICES.advice" , stock_list, fixed = T)] #match pattern 
+    
+    stock_advice <- ifelse(nrow(stock_list_match[[1]]) == 0, #check if got right one (more than 0 rows in any case, otherwise caught a title)
+           stock_list_match[[2]], stock_list_match[[1]])
+    
+    stock_advice <- stock_advice[[1]] %>% as_tibble %>% mutate_all(as.character) #extract the table
+    
+  } else if(is.null(dim(stock_list[grepl("ICES.advice" , stock_list)])) == F) {
+    stock_advice <- stock_list[grepl("ICES advice" , stock_list)][[1]] %>% #extract the first df where he finds ICES.advice as is
+    as_tibble() %>% mutate_all(as.character)
+  } else{
+    next #if didn't find the table jump to next iteration
+  }
+
+  #extract the original colname to check later on if the extract_tables function read it correctly
+  if(colnames(stock_advice[,1]) == "Year") {
+      original_colname <- "Year"
+  } else if(is.na(pull(stock_advice[1,1]) == "Year") == F) {
+    original_colname <- "Year" #in case column names were not detected but column still well separated
+  } else {
+    original_colname <- colnames(stock_advice[,1])
+  }
+  
+  #rename the first column to Col1 so independently from its orginal name you can now refer to it
+  stock_advice <- stock_advice %>% rename(Col1 = colnames(stock_advice[,1]))
+  stock_advice <- stock_advice %>% dplyr::filter(str_detect(Col1, "^2")) %>% #select columns that starts with 2 for the years
+    tail(n=6)
+  
+  #need to diffrentiate if read all column or only two
+  if(nrow(stock_advice) == 0){
+    stock_advice <- tibble() %>% mutate(Year = NA, Advice = NA, Stock = stock) %>% #if didn't find
+      mutate_all(as.character)
+    
+  } else if(ncol(stock_advice) <= 2) {
+    #then extract info by spliiting strg contained in 1st column, the pattern
+    stock_advice <- str_split_fixed(stock_advice$Col1, pattern = "(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)", n = 2) %>% 
+      as_tibble() %>% #split the value in year and advice
+      rename(Year = V1, Advice = V2) %>% #rename the column
+      mutate(Stock = stock) %>% #add stock column
+      mutate_all(as.character) #all as character for joining afterwards
+    
+  } else if(original_colname == "Year" | stock_advice[1,1] == "Year"){
+    #then extract info by spliiting strg contained in 1st column, the pattern
+    stock_advice <- stock_advice %>% select(1:2) %>% #select first two columns
+      rename(Year = colnames(stock_advice[,1]), Advice = colnames(stock_advice[,2])) %>% #rename first two columns
+      mutate(Stock = stock) %>% #add stock column
+      mutate_all(as.character) #all to character for joining afterwards
+    
+  } else{
+    stock_advice <- str_split_fixed(stock_advice$Col1, pattern = "(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)", n = 2) %>% 
+      as_tibble() %>% #split the value in year and advice
+      rename(Year = V1, Advice = V2) %>% #rename the column
+      mutate(Stock = stock) %>% #add stock column
+      mutate_all(as.character) #all as character for joining afterwards
+  }
+  
+  #store in big df
+  ICES_advice <- bind_rows(ICES_advice, stock_advice)
+}
+
+#Now need to fix the ones that were not split correctly and are still on one column
+#use the ifelse function to distinguish cases where it's needed (more than 4 characters in r column)
+ICES_advice <- ICES_advice %>% 
+  mutate(Advice = ifelse(nchar(Year) > 4, gsub("[[:digit:]]","", Year), Advice), #suppress digits from the strg and assign it to advice
+         Year = ifelse(nchar(Year) > 4, str_sub(Year, 0, 4), Year)) #select only first four characters to get the year
+
+#Finally, add the species' names and ecoregions of the evaluated stocks to the df
+ICES_advice <- left_join(ICES_advice, WGEF[c("Species", "Stock", "Eco Region")], by = "Stock")
+
+#export it to csv in long format to manually check and if needed complete
+ICES_advice_history <- write.csv(ICES_advice, file ="data\\ICES_advice_history.csv")
+
+#also need to correct for the stocks whose history of advice was splitted on two pages --> the year values will stop earlier than 2020 for instance
+```
+
+Remarks : I extracted the qualitative status by hand, I think in the end it's more efficient than trying to make the loop work.

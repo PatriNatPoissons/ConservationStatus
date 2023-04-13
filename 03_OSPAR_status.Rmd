@@ -1,0 +1,115 @@
+---
+title: "OSPAR_status"
+author: "Pauline"
+date: '2022-05-05'
+output: 
+  html_document:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+#knitting options
+knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+
+#Load packages
+##general
+library(tidyverse)
+library(readxl)
+
+##for the html output
+library(knitr)
+
+#for data scraping
+library(XML)
+library(RCurl)
+library(stringr)
+library(httr)
+```
+
+# Assesments from conventions
+Select species from the Oegelund Nielsen dataset that are cited in conventions.
+```{r conventions}
+#elasmo_fr
+elasmo_FR <- read.csv("data\\elasmo_uicn_france.csv")
+
+#list of species names for looping later on
+species_names <- elasmo_FR$Species
+
+#Species cited in conventions
+species_in_conventions <- read.csv("data\\Species_cited_in_appendices.csv", sep = ",")
+```
+
+* Barcelona_appendix : Convention for the Protection of the Mediterranean Sea Against Pollution (https://www.unep.org/unepmap/what-we-do). One assesment for elamsobranchs in 2007.
+* BERN_appendix : Convention on the Conservation of European Wildlife and Natural Habitats (https://www.coe.int/en/web/bern-convention/home), indicator of status = appendix
+* CITES : Convention on International Trade in Endangered Species of Wild Fauna and Flora (https://cites.org/eng), indicator of status = appendix
+* CMS : Convention on the Conservation of Migratory Species of Wild Animals (https://www.cms.int/), indicator of status = appendix
+* GROMS_migratory sp : database linked to CMS aka Bonn convention
+* OSPAR : oslo-paris convention, own status by zone
+* Shark.MoU : part of CMS dedicated to migratory sharks, indicator of status = appendix
+* UNCLOS : United Nations Convention on the Law of the Sea, no species' assessments
+
+# OSPAR {#OSPAR}
+Select the species present in the OSPAR convention and extract their status from the OSPAR website.
+
+```{r cites}
+#extract species'name and add a new column with name formatted for scraping
+species_OSPAR <- species_in_conventions %>% select(Species, Name_FR, Name_EN, OSPAR) %>% 
+  drop_na() %>% #keep species present in convention
+  pull(Name_EN)
+
+#careful, angelshark needs to be angel-shark
+species_OSPAR[species_OSPAR=="Angelshark"] <- "Angel shark"
+
+#attention blue skate used to be common skate
+species_OSPAR[species_OSPAR=="Blue skate"] <- "Common skate"
+
+#empty dfto store results
+Status_OSPAR <- tibble()
+
+#Loop over all OSPAR species
+for(i in 1:length(species_OSPAR)){
+  #species' name for the url within the loop
+  species <- str_replace_all(species_OSPAR[i], pattern = " ", replacement = "-") %>% tolower() 
+  
+  #url to access to have info
+  url <- paste("https://oap.ospar.org/en/ospar-assessments/committee-assessments/biodiversity-committee/status-assesments/", species, "/",sep = "")
+  data <- GET(url)
+  ospar <- readHTMLTable(rawToChar(data$content))
+  
+  #need to differentiate is info available, if it is not empty the info is available
+  if(length(ospar) > 0) {
+  # reformat species
+    species <- str_replace_all(species_OSPAR[i], pattern = "-", replacement = " ")
+    
+    #extract the 3rd table, the one containing the assessment info and store it in empty df ATTENTION changed to 2
+    species_df1 <- ospar[[1]] %>% as_tibble() %>% slice(-1) %>% mutate(Name_EN = species)
+    species_df2 <- ospar[[2]] %>% as_tibble() %>% slice(-1)
+    
+    #bind
+    species_df <- bind_cols(species_df1, species_df2)
+    
+    #extract the assessment year
+    #year <- ospar[[1]] %>% str_sub(0,4)
+    #year <- year[1]
+    
+    #the first row is shifted, we need to shift all values one column to the left
+    #species_df[1,] <- species_df[1,] %>% relocate(V1, .after = V7)
+    #get rid of the region
+    species_df[species_df == "Region"] <- ""
+    Status_OSPAR <- bind_rows(Status_OSPAR, species_df) %>% mutate(Year = year)
+  }
+}
+
+#repare common names backwards to 
+Status_OSPAR[Status_OSPAR == "Common skate"] <- "Blue skate"
+Status_OSPAR[Status_OSPAR == "Angel shark"] <- "Angelshark"
+
+
+#extract status by region and the year, add to IUCN_all
+#attention: the region I has been mis read and is in second column instead of first. need to adjust in table
+Status_OSPAR <- Status_OSPAR %>% select(Name_EN, V1, V5, V6, Year) %>% rename(Region = V1, Previous_status = V5, Last_status = V6) %>%
+  left_join(., OegNiel_conventions[c("Species", "Common_name")]) %>%
+  relocate(Species)
+
+#write_excel_csv(Status_OSPAR, file = "data/Status_OSPAR.csv")
+```

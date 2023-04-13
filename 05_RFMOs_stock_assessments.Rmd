@@ -1,0 +1,9 @@
+---
+title: "05_RFMOs_stock_assessments"
+author: "Pauline"
+date: '2022-06-22'
+output: html_document
+---
+
+
+Check ICCAT and CGPM (med) websites --> extracted manually

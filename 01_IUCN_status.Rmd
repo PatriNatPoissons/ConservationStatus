@@ -1,0 +1,262 @@
+---
+title: "IUCN_status"
+author: "Pauline STEPHAN (MNHN)"
+date: '2022-05-05'
+output: html_document
+---
+
+# Document description
+## Purpose
+This data compilation was made to evaluate the evaluation state of elasmobranchs (sharks, skates and rays) present in French waters. As there was only one national French IUCN evaluation available for these species, we wanted to have an overview of other evaluations (IUCN and conventions) for all the species.  
+It ouputs three files, that I separated for clarity reasons:  
+1. **Elasmobranchs_IUCN_historical_table**: this table displays the historical evolution of IUCN status by species and region. The first columns summarise the essential information. They are followed by column with years as names and the status as content. This allows the user to have more detailed information, e.g. if they want to look for the evolution of a specific species in a specific region. To see the result: [Display IUCN table](#DisplayIUCN)  
+2. **Status_OSPAR**: This is the OSPAR status information extracted from their website. As the format is very different than the IUCN status and there are much fewer species evaluated, I decided to keep it separated from the IUCN table. To see the result: [Display OSPAR status](#DisplayOSPAR)  
+3. **Convention_appendices**: This table summarises which species are cited in which convention appendices (Bern, Barcelona, Bonn, CITES). As it is also a different format, I kept it separated. To see the result: [Species cited in appendices](#DisplayAppendices)  
+
+*A production of nice html tables, displaying the files created in this script, is in script 05_Elasmobranchs_summary.*  
+
+## How to reuse it
+### For elasmobranchs
+The IUCN historical table will be updated automatically with new info available on the IUCN website. The **french IUCN list** and the **national lists** will need to be changed to the newest file available on the net. If you put the files in the "data" order of the repository and give them the same names as the old ones, it should work just the same. *Just check they are in the same format.*
+
+### For other species
+You can run this code easily for other species by replacing the species_names list in the "prepare" chunk [Set it up](#Setitup). The IUCN french list file won't be useful, as well as the Oegelund Nielsen df if you're not working on elasmobranchs. In a nutshell, the IUCN API part is the easiest to reuse to work on species other than elasmobranchs.
+
+```{r setup, include=FALSE}
+#knitting options
+knitr::opts_chunk$set(message=FALSE, warning=FALSE)
+
+#Load packages
+##general
+library(tidyverse)
+library(readxl)
+library(writexl)
+
+##for the html output
+library(knitr)
+
+##IUCN API
+library(taxize)
+library(rredlist)
+
+#Print out table
+library(reactablefmtr)
+
+#for data scraping
+library(XML)
+library(RCurl)
+library(stringr)
+library(httr)
+```
+
+# Load data
+The data "french list IUCN" is available on the french IUCN website
+```{r data}
+#French list IUCN
+##rename nom scientifique to species. Attention : here I already corrected some mispelled are not up-to-date species' names. I spotted them during first runs and changed them by hand. I kept the original names in the "FR_species" column.
+elasmo_FR <- read.csv("data/elasmo_uicn_france.csv")
+
+#file with the corrected common names, used at the end of the doc for adding the common names
+names_elasmo <- read_xlsx("data/Elasmobranches_présents_FR.xlsx") %>% rename(Species = Espèce, Name_FR = "Nom commun", Name_EN = "Nom anglais")
+```
+
+# IUCN API to extract information from the redlist.org website
+## Set it up {#Setitup}
+```{r prepare}
+#list of species names for looping later on
+species_names <- elasmo_FR$Species
+
+# set your api key as an environmental variable so you do not upload
+Sys.setenv(IUCN_KEY = '959850446d454cc0ab561b66417b9bc0bf85df0c0da1ddb51dbf2cae1a5dfc96') #my personal token
+
+#and you can save that as a R variable 
+apikey <- Sys.getenv("IUCN_KEY")
+```
+
+## Extract worldwide status
+```{r IUCN_world, message = FALSE}
+#initialize empty df
+IUCN_world <- tibble(Year = NA, Status= NA, Species = NA)
+
+for(i in 1:length(species_names)){
+  species <- species_names[i]
+  summary <- rl_history(species, key = apikey)
+  IUCN_status <- summary[2] #extract only info on status from the summary
+  
+  #need to differentiate if info available or not
+  if(length(summary$result) == 0){
+    #keep the species in df even if info not available on the iucn site
+    species_df <- IUCN_world %>% mutate(Species = species, Year = NA, Status = NA)
+  } else{
+    species_df <- bind_cols(IUCN_status$result$assess_year, IUCN_status$result$code) %>% as_tibble() %>% rename(Year = ...1, Status = ...2) %>%
+      mutate(Species = species) #add a column species to join with IUCN_world
+  }
+  #bind with the pre-created df
+  IUCN_world <- bind_rows(IUCN_world, species_df) %>% distinct(.keep_all = TRUE)#for an unknown reason many duplicated rows, keep only one
+  print(species)
+} 
+
+#get in shape for binding later on
+IUCN_world <- IUCN_world %>%  
+  slice(-1) %>% #keep NAs to have an idea if species never evaluated (only in this df, will be dropped later on)
+  mutate(Level = "International", Region = "World") %>%
+  mutate_all(as.character)#arrange columns in time
+```
+
+## Extract European status
+```{r IUCN_europe, message=FALSE, warning=F}
+#initialize empty df
+IUCN_europe <- tibble(Year = NA, Status= NA, Species = NA)
+
+for(i in 1:length(species_names)){
+  species <- species_names[i]
+  summary <- rl_history(species, key = apikey, region = "Europe")
+  IUCN_status <- summary[3] #extract only info on status from the summary
+  
+  #need to differentiate if info available or not
+  if(length(summary$result) == 0){
+    #keep the species in df even if info not available on the iucn site
+    species_df <- IUCN_europe %>% mutate(Species = species, Year = NA, Status = NA)
+  } else{
+    species_df <- bind_cols(IUCN_status$result$assess_year, IUCN_status$result$code) %>% as_tibble() %>% rename(Year = ...1, Status = ...2) %>%
+      mutate(Species = species) #add a column species to join with IUCN_world
+  }
+  #bind with the pre-created df
+  IUCN_europe <- bind_rows(IUCN_europe, species_df) %>% distinct(.keep_all = TRUE)#for an unknown reason many duplicated rows, keep only one
+} 
+
+#get in shape for binding later on
+IUCN_europe <- IUCN_europe %>% drop_na() %>% mutate(Level = "Continental", Region = "Europe")  %>%
+  mutate_all(as.character)
+```
+
+## Extract Mediterranean status
+```{r IUCN_med, message=FALSE, warning=F}
+#initialize empty df
+IUCN_med <- tibble(Year = NA, Status= NA, Species = NA)
+
+for(i in 1:length(species_names)){
+  species <- species_names[i]
+  summary <- rl_history(species, key = apikey, region = "Mediterranean")
+  IUCN_status <- summary[3] #extract only info on status from the summary
+  
+  #need to differentiate if info available or not
+  if(length(summary$result) == 0){
+    #keep the species in df even if info not available on the iucn site
+    species_df <- IUCN_med %>% mutate(Species = species, Year = NA, Status = NA)
+  } else{
+    species_df <- bind_cols(IUCN_status$result$assess_year, IUCN_status$result$code) %>% as_tibble() %>% rename(Year = ...1, Status = ...2) %>%
+      mutate(Species = species) #add a column species to join with IUCN_world
+  }
+  #bind with the pre-created df
+  IUCN_med <- bind_rows(IUCN_med, species_df) %>% distinct(.keep_all = TRUE)#for an unknown reason many duplicated rows, keep only one
+} 
+
+#get in shape for binding later on
+IUCN_med <- IUCN_med %>% mutate(Level = "Regional", Region = "Mediterranean Sea") %>% drop_na() %>% mutate_all(as.character)
+```
+
+## IUCN national status from zoological society london
+```{r IUCN_zsl}
+#IUCN info zoological society london
+#IUCN_zsl <- read_xlsx("data/ZSL_IUCN_04022.xlsx") %>% mutate(Species = paste(genus, species, sep = " ")) %>% 
+  #relocate(Species) %>% select(Species, country, simple_regional_status, year_assessed) %>% 
+  #distinct(.keep_all = TRUE) %>% #remove duplicated rows
+  #drop_na() %>% #drop NAs 
+  #rename(Region = country, Year = year_assessed, Status = simple_regional_status) %>%
+  #mutate(Level = ifelse(Region == c("Baltic Sea", "Mediterranean Sea"), "Regional", "National")) %>% mutate_all(as.character)
+
+## ATENTION I completed the version below by hand
+IUCN_zsl <- read_xlsx("data/ZSL_IUCN_completed.xlsx")  %>% filter(Species %in% species_names) %>% select(Species, Region, Status, Year) %>%
+  mutate(Level = ifelse(Region == c("Baltic Sea", "Mediterranean Sea", "NE Atlantic"), "Regional", "National")) %>% mutate_all(as.character) %>%
+  filter(Region != "France (continental)") #we have the french data from the french df
+
+#convert the value to bind with french list and avoid duplicated rows
+IUCN_zsl[IUCN_zsl == "France (continental)"] <- "France"
+
+#There is a problem with the ifelse, correct by hand
+IUCN_zsl[IUCN_zsl == "Mediterranean Sea"] <- "Mediterranean Sea"
+IUCN_zsl$Level[IUCN_zsl$Region == "Mediterranean Sea"] <- "Regional"
+IUCN_zsl$Level[IUCN_zsl$Region == "NE Atlantic"] <- "Regional"
+IUCN_zsl$Level[IUCN_zsl$Region == "Baltic Sea"] <- "Regional"
+```
+
+## IUCN France
+available only for the 2013 evaluation
+```{r IUCN_FR}
+IUCN_FR <- elasmo_FR %>% select(Species, Cat_liste.rouge.France) %>% 
+  mutate(Year = 2013, Level = "National", Region = "France") %>% rename(Status = Cat_liste.rouge.France) %>%
+  mutate_all(as.character) %>% na_if("NA")
+```
+
+## IUCN NE Atlantic 2015 from Walls and Dulvy (2020)
+```{r}
+#Load the supplementary material of Walls and Dulvy 2021 (can be doowloaded from https://www.nature.com/articles/s41598-021-94632-4)
+Walls_Dulvy <- read_xlsx("data\\Walls and Dulvy 2021.xlsx", skip = 6)
+
+#rename region for unity
+Walls_Dulvy$Region[Walls_Dulvy$Region == "NEA"] <- "NE Atlantic"
+
+#put WD in shape for joining
+Walls_Dulvy_long <- Walls_Dulvy %>% filter(Region == "NE Atlantic") %>%
+  rename(Species = "Species latin name",
+  Status = "Original 2015 sub-regional statuses before merging to EU Europe categories (without predicting from previous work)") %>%
+    filter(Species %in% species_names) %>%
+  mutate(Year = 2015, Level = "Regional") %>%
+  select(Species, Status, Year, Region, Level) %>%
+  mutate_all(as.character)
+```
+
+# Bind all tables together
+## Bind all
+```{r bind_all}
+#Join them all and pivot to wide format
+IUCN_all <- full_join(IUCN_world, IUCN_europe) %>% #join world and europe
+  full_join(., IUCN_med) %>% #join med
+  full_join(., IUCN_zsl) %>% #join national lists compiled by zoological society of london
+  full_join(., IUCN_FR) %>% #join french evaluation
+  full_join(., Walls_Dulvy_long) %>%
+  distinct(.keep_all = TRUE) %>% #keep only distinct rows
+  drop_na() #keep only existing evaluations
+```
+
+## Calculate trend in status by region
+```{r trend}
+#extract last two status for each species at each level/region
+IUCN_trend <- IUCN_all %>% drop_na() %>%
+  mutate(Year = as.numeric(Year)) %>% #turn year into numeric to select last two years afterwards
+  group_by(Species, Level, Region) %>% slice_max(Year, n =2) %>% #select last two years that were evaluated
+  arrange(Species, Level, Year) %>% #arrange in ascending order, needed for status evolution in right order
+  summarise(Status_evolution = paste(Status, collapse ="-"), 
+            Years_apart = max(Year)-min(Year),
+            Last_evaluation = max(Year),
+            Before_last_evaluation = min(Year)) %>%
+  mutate(Last_status = str_sub(Status_evolution, -2)) %>%
+  mutate(Status_evolution = ifelse(nchar(Status_evolution) > 2, Status_evolution, NA), #if there was only one evaluation, set to NA
+         Years_apart = ifelse(Years_apart == 0, NA, Years_apart)) %>% #if there was only one evalutation, set to NA
+  mutate(Before_last_status = ifelse(is.na(Status_evolution), NA, str_sub(Status_evolution, 1, 2))) %>% #add before_last-status if relevant
+  mutate(Before_last_evaluation = ifelse(is.na(Before_last_status), NA, Before_last_evaluation))
+
+#now join to IUCN_all
+IUCN_all <- left_join(IUCN_all, IUCN_trend, by = c("Species", "Level", "Region")) %>% 
+  relocate(c("Status_evolution", "Years_apart", "Last_status", "Before_last_status", "Last_evaluation", "Before_last_evaluation"), .after = Level)
+```
+
+## Pivot to wider format (years as columns with status as values), final formatting and export df
+```{r wide}
+#pivot to
+Elasmobranchs_IUCN_historical_status <- IUCN_all %>%
+  pivot_wider(names_from = "Year", values_from = "Status", values_fn = first, values_fill = NA) %>% #if two values, takes the first one
+  na_if("NULL") %>%
+  select(order(colnames(.))) %>% #order the columns by increasing order
+  relocate(c("Species", "Level", "Region", "Status_evolution", "Years_apart", "Last_status", "Last_evaluation")) %>% #put species first
+  arrange(Species, Level, Region) %>% #sort species and level alphabetically
+  left_join(., names_elasmo[c("Species", "Name_FR", "Name_EN")], by = "Species") %>% 
+  relocate(c("Name_FR", "Name_EN"), .after = "Species") %>% #add french name
+  filter(Region != "Brazil" & Region != "Canada" & Region != "Venezuela") #remove far away countries (that come from ZSL)
+
+#Export file as excel
+write_excel_csv(Elasmobranchs_IUCN_historical_status, file = "data\\Elasmobranchs_IUCN_historical_status.csv")
+```
+
+Remarks:

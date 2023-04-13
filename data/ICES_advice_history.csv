@@ -1,0 +1,325 @@
+;Year;Advice;Stock;Species;Eco Region
+1;2018; Quadrennial advice;agn.27.nea;Squatina squatina;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+2;2019; Quadrennial advice;agn.27.nea;Squatina squatina;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+3;2020; Precautionary approach;agn.27.nea;Squatina squatina;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+4;2021; Same advice as for 2020;agn.27.nea;Squatina squatina;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+5;2022; Same advice as for 2020;agn.27.nea;Squatina squatina;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+6;2023; Same advice as for 2020;agn.27.nea;Squatina squatina;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+7;2018;Quadrennial advice;bsk.27.nea;Cetorhinus maximus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+8;2019;Quadrennial advice;bsk.27.nea;Cetorhinus maximus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+9;2020;Precautionary approach;bsk.27.nea;Cetorhinus maximus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+10;2021;Same advice as in 2020;bsk.27.nea;Cetorhinus maximus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+11;2022;Same advice as in 2020;bsk.27.nea;Cetorhinus maximus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+12;2023;Same advice as in 2020;bsk.27.nea;Cetorhinus maximus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+13;2018; Quadrennial advice;cyo.27.nea;Centrophorus squamosus, Centroscymnus coelolepis;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+14;2019; Quadrennial advice;cyo.27.nea;Centrophorus squamosus, Centroscymnus coelolepis;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+15;2020; Precautionary approach;cyo.27.nea;Centrophorus squamosus, Centroscymnus coelolepis;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+16;2021; Same advice as in 2020;cyo.27.nea;Centrophorus squamosus, Centroscymnus coelolepis;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+17;2022; Same advice as in 2020;cyo.27.nea;Centrophorus squamosus, Centroscymnus coelolepis;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+18;2023; Same advice as in 2020;cyo.27.nea;Centrophorus squamosus, Centroscymnus coelolepis;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+19;2009; = 2468;dgs.27.nea;Squalus acanthias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+20;2017; Biennial;gag.27.nea;Galeorhinus galeus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+21;2018; Precautionary approach;gag.27.nea;Galeorhinus galeus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+22;2020; Precautionary approach;gag.27.nea;Galeorhinus galeus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+23;2021; Same advice as for 2020;gag.27.nea;Galeorhinus galeus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+24;2022; Precautionary approach;gag.27.nea;Galeorhinus galeus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+25;2023; Precautionary approach;gag.27.nea;Galeorhinus galeus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+26;2018; Quadrennial advice;guq.27.nea;Centrophorus squamosus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+27;2019; Quadrennial advice;guq.27.nea;Centrophorus squamosus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+28;2020; Precautionary approach;guq.27.nea;Centrophorus squamosus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+29;2021; Same advice as in 2020;guq.27.nea;Centrophorus squamosus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+30;2022; Same advice as in 2020;guq.27.nea;Centrophorus squamosus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+31;2023; Same advice as in 2020;guq.27.nea;Centrophorus squamosus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+32;2018;Quadrennial advice;por.27.nea;Lamna nasus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+33;2019;Quadrennial advice;por.27.nea;Lamna nasus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+34;2020;Precautionary approach;por.27.nea;Lamna nasus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+35;2021;Same advice as for 2020;por.27.nea;Lamna nasus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+36;2022;Same advice as for 2020;por.27.nea;Lamna nasus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+37;2023;Same advice as for 2020;por.27.nea;Lamna nasus;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+38;2018; Precautionary approach;raj.27.1012;Rajidae;Azores Ecoregion, Oceanic Northeast Atlantic Ecoregion
+39;2019; Precautionary approach (same advice as for 2018);raj.27.1012;Rajidae;Azores Ecoregion, Oceanic Northeast Atlantic Ecoregion
+40;2020; Precautionary approach;raj.27.1012;Rajidae;Azores Ecoregion, Oceanic Northeast Atlantic Ecoregion
+41;2021; Same advice as in 2020;raj.27.1012;Rajidae;Azores Ecoregion, Oceanic Northeast Atlantic Ecoregion
+42;2022; Precautionary approach;raj.27.1012;Rajidae;Azores Ecoregion, Oceanic Northeast Atlantic Ecoregion
+43;2023; Precautionary approach;raj.27.1012;Rajidae;Azores Ecoregion, Oceanic Northeast Atlantic Ecoregion
+44;2014; No new advice, same as 2013;raj.27.3a47d;Rajidae;Greater North Sea Ecoregion
+45;2015; No new advice, same as 2014;raj.27.3a47d;Rajidae;Greater North Sea Ecoregion
+46;2017; Biennial advice;raj.27.3a47d;Rajidae;Greater North Sea Ecoregion
+47;2019; Same advice as 2018;raj.27.3a47d;Rajidae;Greater North Sea Ecoregion
+48;2021; Same advice as in 2020;raj.27.3a47d;Rajidae;Greater North Sea Ecoregion
+49;2023; Same advice as in 2022;raj.27.3a47d;Rajidae;Greater North Sea Ecoregion
+50;2017;No advice;raj.27.67a-ce-h;Rajidae;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+51;2018;No advice;raj.27.67a-ce-h;Rajidae;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+52;2019;No advice;raj.27.67a-ce-h;Rajidae;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+53;2020;No advice;raj.27.67a-ce-h;Rajidae;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+54;2021;No advice;raj.27.67a-ce-h;Rajidae;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+55;2022;No advice;raj.27.67a-ce-h;Rajidae;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+56;2017; No advice;raj.27.89a;Rajidae;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+57;2018; No advice;raj.27.89a;Rajidae;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+58;2019; No advice;raj.27.89a;Rajidae;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+59;2020; No advice;raj.27.89a;Rajidae;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+60;2021; No advice;raj.27.89a;Rajidae;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+61;2022; No advice;raj.27.89a;Rajidae;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+62;2018;Same advice as for 2017;rja.27.nea;Rostroraja alba;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+63;2019;Same advice as for 2017;rja.27.nea;Rostroraja alba;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+64;2020;Precautionary approach;rja.27.nea;Rostroraja alba;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+65;2021;Same advice as for 2020;rja.27.nea;Rostroraja alba;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+66;2022;Same advice as for 2020;rja.27.nea;Rostroraja alba;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+67;2023;Same advice as for 2020;rja.27.nea;Rostroraja alba;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+68;2018; Quadrennial advice;rjb.27.3a4;Dipturus batis;Celtic Seas Ecoregion, Faroes Ecoregion, Greater North Sea Ecoregion
+69;2019; Quadrennial advice;rjb.27.3a4;Dipturus batis;Celtic Seas Ecoregion, Faroes Ecoregion, Greater North Sea Ecoregion
+70;2020; No catch advice requested;rjb.27.3a4;Dipturus batis;Celtic Seas Ecoregion, Faroes Ecoregion, Greater North Sea Ecoregion
+71;2021; No catch advice requested;rjb.27.3a4;Dipturus batis;Celtic Seas Ecoregion, Faroes Ecoregion, Greater North Sea Ecoregion
+72;2022; No catch advice requested;rjb.27.3a4;Dipturus batis;Celtic Seas Ecoregion, Faroes Ecoregion, Greater North Sea Ecoregion
+73;2023; No catch advice requested;rjb.27.3a4;Dipturus batis;Celtic Seas Ecoregion, Faroes Ecoregion, Greater North Sea Ecoregion
+74;2016; No target fishery, mitigate bycatch 0;rjb.27.67a-ce-k;Dipturus batis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+75;2017; Precautionary approach  0;rjb.27.67a-ce-k;Dipturus batis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+76;2019; No catch advice requested -;rjb.27.67a-ce-k;Dipturus batis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+77;2020; No catch advice requested -;rjb.27.67a-ce-k;Dipturus batis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+78;2021; No catch advice requested -;rjb.27.67a-ce-k;Dipturus batis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+79;2022; No catch advice requested -;rjb.27.67a-ce-k;Dipturus batis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+80;2016; No new advice, same as 2015;rjb.27.89a;Dipturus batis;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+81;2017; Precautionary approach;rjb.27.89a;Dipturus batis;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+82;2019; No catch advice requested;rjb.27.89a;Dipturus batis;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+83;2020; No catch advice requested;rjb.27.89a;Dipturus batis;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+84;2021; No catch advice requested;rjb.27.89a;Dipturus batis;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+85;2022; No catch advice requested;rjb.27.89a;Dipturus batis;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+86;2017; Biennial;rjc.27.3a47d;Raja clavata;Greater North Sea Ecoregion
+87;2018; Precautionary approach;rjc.27.3a47d;Raja clavata;Greater North Sea Ecoregion
+88;2020; Precautionary approach;rjc.27.3a47d;Raja clavata;Greater North Sea Ecoregion
+89;2021; Same advice as in ;rjc.27.3a47d;Raja clavata;Greater North Sea Ecoregion
+90;2022; Precautionary approach;rjc.27.3a47d;Raja clavata;Greater North Sea Ecoregion
+91;2023; Precautionary approach;rjc.27.3a47d;Raja clavata;Greater North Sea Ecoregion
+92;2016; No new advice, same as 2015;rjc.27.6;Raja clavata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+93;2017; Precautionary approach;rjc.27.6;Raja clavata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+94;2019; Precautionary approach;rjc.27.6;Raja clavata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+95;2020; Precautionary approach;rjc.27.6;Raja clavata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+96;2021; Precautionary approach;rjc.27.6;Raja clavata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+97;2022; Precautionary approach;rjc.27.6;Raja clavata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+98;2016; No new advice, same as 2015;rjc.27.7afg;Raja clavata;Celtic Seas Ecoregion
+99;2017; Precautionary approach;rjc.27.7afg;Raja clavata;Celtic Seas Ecoregion
+100;2019; Precautionary approach;rjc.27.7afg;Raja clavata;Celtic Seas Ecoregion
+101;2020; Precautionary approach;rjc.27.7afg;Raja clavata;Celtic Seas Ecoregion
+102;2021; Precautionary approach;rjc.27.7afg;Raja clavata;Celtic Seas Ecoregion
+103;2022; Precautionary approach;rjc.27.7afg;Raja clavata;Celtic Seas Ecoregion
+104;2016; No new advice, same as ;rjc.27.7e;Raja clavata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+105;2017; Precautionary approach;rjc.27.7e;Raja clavata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+106;2019; Precautionary approach;rjc.27.7e;Raja clavata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+107;2020; Precautionary approach;rjc.27.7e;Raja clavata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+108;2021; Precautionary approach;rjc.27.7e;Raja clavata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+109;2022; Precautionary approach;rjc.27.7e;Raja clavata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+110;2016; No new advice, same as 2015;rjc.27.8;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+111;2017; Precautionary approach;rjc.27.8;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+112;2019; Precautionary approach;rjc.27.8;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+113;2020; Precautionary approach;rjc.27.8;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+114;2021; Precautionary approach;rjc.27.8;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+115;2022; Precautionary approach;rjc.27.8;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+116;2016; No new advice. Same as for ;rjc.27.9a;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion
+117;2017; Precautionary approach;rjc.27.9a;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion
+118;2019; Precautionary approach;rjc.27.9a;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion
+119;2020; Precautionary approach;rjc.27.9a;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion
+120;2021; Precautionary approach;rjc.27.9a;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion
+121;2022; Precautionary approach;rjc.27.9a;Raja clavata;Bay of Biscay and the Iberian Coast Ecoregion
+122;2016; No new advice, same as 2015;rje.27.7de;Raja microocellata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+123;2017; Precautionary approach;rje.27.7de;Raja microocellata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+124;2019; Precautionary approach;rje.27.7de;Raja microocellata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+125;2020; Precautionary approach;rje.27.7de;Raja microocellata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+126;2021; Precautionary approach;rje.27.7de;Raja microocellata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+127;2022; Precautionary approach;rje.27.7de;Raja microocellata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+128;2016; No new advice, same as 2015.;rje.27.7fg;Raja microocellata;Celtic Seas Ecoregion
+129;2017; Precautionary approach;rje.27.7fg;Raja microocellata;Celtic Seas Ecoregion
+130;2019; Precautionary approach;rje.27.7fg;Raja microocellata;Celtic Seas Ecoregion
+131;2020; Precautionary approach;rje.27.7fg;Raja microocellata;Celtic Seas Ecoregion
+132;2021; Precautionary approach;rje.27.7fg;Raja microocellata;Celtic Seas Ecoregion
+133;2022; Precautionary approach;rje.27.7fg;Raja microocellata;Celtic Seas Ecoregion
+134;2016; No new advice, same as 2015 186;rjf.27.67;Leucoraja fullonica;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+135;2017; Precautionary approach  = 210;rjf.27.67;Leucoraja fullonica;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+136;2019; Precautionary approach = 168;rjf.27.67;Leucoraja fullonica;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+137;2020; Precautionary approach = 168;rjf.27.67;Leucoraja fullonica;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+138;2021; Precautionary approach = 168;rjf.27.67;Leucoraja fullonica;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+139;2022; Precautionary approach = 168;rjf.27.67;Leucoraja fullonica;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+140;2010;;rjh.27.4a6;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+141;2011;;rjh.27.4a6;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+142;2012;;rjh.27.4a6;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+143;2013;;rjh.27.4a6;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+144;2014;Decrease catches by 20%;rjh.27.4a6;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+145;2015;Same advice as in 2014;rjh.27.4a6;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+146;2018; Precautionary approach;rjh.27.4c7d;Raja brachyura;Greater North Sea Ecoregion
+147;2019; Precautionary approach (same advice as );rjh.27.4c7d;Raja brachyura;Greater North Sea Ecoregion
+148;2020; Precautionary approach;rjh.27.4c7d;Raja brachyura;Greater North Sea Ecoregion
+149;2021; Same advice as in ;rjh.27.4c7d;Raja brachyura;Greater North Sea Ecoregion
+150;2022; Precautionary approach;rjh.27.4c7d;Raja brachyura;Greater North Sea Ecoregion
+151;2023; Precautionary approach;rjh.27.4c7d;Raja brachyura;Greater North Sea Ecoregion
+152;2017;Precautionary approach;rjh.27.7afg;Raja brachyura;Celtic Seas Ecoregion
+153;2018;;rjh.27.7afg;Raja brachyura;Celtic Seas Ecoregion
+154;2019;Precautionary approach;rjh.27.7afg;Raja brachyura;Celtic Seas Ecoregion
+155;2020;Precautionary approach;rjh.27.7afg;Raja brachyura;Celtic Seas Ecoregion
+156;2021;Precautionary approach;rjh.27.7afg;Raja brachyura;Celtic Seas Ecoregion
+157;2022;Precautionary approach;rjh.27.7afg;Raja brachyura;Celtic Seas Ecoregion
+158;2017;Precautionary approach;rjh.27.7e;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+159;2018;;rjh.27.7e;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+160;2019;Precautionary approach;rjh.27.7e;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+161;2020;Precautionary approach;rjh.27.7e;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+162;2021;Precautionary approach;rjh.27.7e;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+163;2022;Precautionary approach;rjh.27.7e;Raja brachyura;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+164;2016; No new advice, same as 2015 200;rjh.27.9a;Raja brachyura;Bay of Biscay and the Iberian Coast Ecoregion
+165;2017; Precautionary approach 177;rjh.27.9a;Raja brachyura;Bay of Biscay and the Iberian Coast Ecoregion
+166;2019; Precautionary approach = 212;rjh.27.9a;Raja brachyura;Bay of Biscay and the Iberian Coast Ecoregion
+167;2020; Precautionary approach  = 212;rjh.27.9a;Raja brachyura;Bay of Biscay and the Iberian Coast Ecoregion
+168;2021; Precautionary approach  = 254;rjh.27.9a;Raja brachyura;Bay of Biscay and the Iberian Coast Ecoregion
+169;2022; Precautionary approach  = 254;rjh.27.9a;Raja brachyura;Bay of Biscay and the Iberian Coast Ecoregion
+170;2016; No new advice, same as ;rji.27.67;Leucoraja circularis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+171;2017; Precautionary approach;rji.27.67;Leucoraja circularis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+172;2019; Precautionary approach;rji.27.67;Leucoraja circularis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+173;2020; Precautionary approach;rji.27.67;Leucoraja circularis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+174;2021; Precautionary approach;rji.27.67;Leucoraja circularis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+175;2022; Precautionary approach;rji.27.67;Leucoraja circularis;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+176;2018; Precautionary approach;rjm.27.3a47d;Raja montagui;Greater North Sea Ecoregion
+177;2019; Precautionary approach (same advice as for 2018);rjm.27.3a47d;Raja montagui;Greater North Sea Ecoregion
+178;2020; Precautionary approach;rjm.27.3a47d;Raja montagui;Greater North Sea Ecoregion
+179;2021; Same advice as in 2020;rjm.27.3a47d;Raja montagui;Greater North Sea Ecoregion
+180;2022; Precautionary approach;rjm.27.3a47d;Raja montagui;Greater North Sea Ecoregion
+181;2023; Precautionary approach;rjm.27.3a47d;Raja montagui;Greater North Sea Ecoregion
+182;2016; No new advice, same as ;rjm.27.67bj;Raja montagui;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+183;2017; Precautionary approach;rjm.27.67bj;Raja montagui;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+184;2019; Precautionary approach;rjm.27.67bj;Raja montagui;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+185;2020; Precautionary approach;rjm.27.67bj;Raja montagui;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+186;2021; Precautionary approach;rjm.27.67bj;Raja montagui;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+187;2022; Precautionary approach;rjm.27.67bj;Raja montagui;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+188;2016; No new advice, same as 2015;rjm.27.7ae-h;Raja montagui;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+189;2017; Precautionary approach;rjm.27.7ae-h;Raja montagui;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+190;2019; Precautionary approach;rjm.27.7ae-h;Raja montagui;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+191;2020; Precautionary approach;rjm.27.7ae-h;Raja montagui;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+192;2021; Precautionary approach;rjm.27.7ae-h;Raja montagui;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+193;2022; Precautionary approach;rjm.27.7ae-h;Raja montagui;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+194;2016; No new advice, same as 2015 94;rjm.27.8;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+195;2017; Precautionary approach = 115;rjm.27.8;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+196;2019; Precautionary approach = 108;rjm.27.8;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+197;2020; Precautionary approach = 108;rjm.27.8;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+198;2021; Precautionary approach = 129;rjm.27.8;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+199;2022; Precautionary approach = 129;rjm.27.8;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion, Oceanic Northeast Atlantic Ecoregion
+200;2016; No new advice, same as ;rjm.27.9a;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion
+201;2017; Precautionary approach;rjm.27.9a;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion
+202;2019; Precautionary approach;rjm.27.9a;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion
+203;2020; Precautionary approach;rjm.27.9a;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion
+204;2021; Precautionary approach;rjm.27.9a;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion
+205;2022; Precautionary approach;rjm.27.9a;Raja montagui;Bay of Biscay and the Iberian Coast Ecoregion
+206;2018;Precautionary approach;rjn.27.3a4;Leucoraja naevus;Greater North Sea Ecoregion
+207;2019;Precautionary approach (same advice as 2018);rjn.27.3a4;Leucoraja naevus;Greater North Sea Ecoregion
+208;2020;Precautionary approach;rjn.27.3a4;Leucoraja naevus;Greater North Sea Ecoregion
+209;2021;Same advice as in 2020;rjn.27.3a4;Leucoraja naevus;Greater North Sea Ecoregion
+210;2022;Precautionary approach;rjn.27.3a4;Leucoraja naevus;Greater North Sea Ecoregion
+211;2023;Precautionary approach;rjn.27.3a4;Leucoraja naevus;Greater North Sea Ecoregion
+212;2016; No new advice, same as 2015;rjn.27.678abd;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+213;2017; Precautionary approach;rjn.27.678abd;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+214;2019; Precautionary approach;rjn.27.678abd;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+215;2020; Precautionary approach;rjn.27.678abd;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+216;2021; Precautionary approach;rjn.27.678abd;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+217;2022; Precautionary approach;rjn.27.678abd;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+218;2017; Precautionary approach;rjn.27.8c;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+219;2018; Precautionary approach (same value as advised 5 catches for 2017);rjn.27.8c;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+220;2019; Precautionary approach;rjn.27.8c;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+221;2020; Precautionary approach;rjn.27.8c;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+222;2021; Precautionary approach;rjn.27.8c;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+223;2022; Precautionary approach;rjn.27.8c;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+224;2016; No new advice, same as 2015;rjn.27.9a;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+225;2017; Precautionary approach;rjn.27.9a;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+226;2019; Precautionary approach;rjn.27.9a;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+227;2020; Precautionary approach;rjn.27.9a;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+228;2021; Precautionary approach;rjn.27.9a;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+229;2022; Precautionary approach;rjn.27.9a;Leucoraja naevus;Bay of Biscay and the Iberian Coast Ecoregion
+230;2018;Quadrennial advice;rjr.27.23a4;Amblyraja radiata;Arctic Ocean Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion
+231;2019;Quadrennial advice;rjr.27.23a4;Amblyraja radiata;Arctic Ocean Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion
+232;2020;Precautionary approach;rjr.27.23a4;Amblyraja radiata;Arctic Ocean Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion
+233;2021;Same advice as in 2020;rjr.27.23a4;Amblyraja radiata;Arctic Ocean Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion
+234;2022;Same advice as in 2020;rjr.27.23a4;Amblyraja radiata;Arctic Ocean Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion
+235;2023;Same advice as in 2020;rjr.27.23a4;Amblyraja radiata;Arctic Ocean Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion
+236;2016; No new advice, same as 2015;rju.27.7bj;Raja undulata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+237;2017; Precautionary approach;rju.27.7bj;Raja undulata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+238;2019; Precautionary approach;rju.27.7bj;Raja undulata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+239;2020; Precautionary approach;rju.27.7bj;Raja undulata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+240;2021; Precautionary approach;rju.27.7bj;Raja undulata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+241;2022; Precautionary approach;rju.27.7bj;Raja undulata;Celtic Seas Ecoregion, Oceanic Northeast Atlantic Ecoregion
+242;2017; Precautionary approach;rju.27.7de;Raja undulata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+243;2018; Precautionary approach;rju.27.7de;Raja undulata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+244;2019; Precautionary approach;rju.27.7de;Raja undulata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+245;2020; Precautionary approach;rju.27.7de;Raja undulata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+246;2021; Precautionary approach;rju.27.7de;Raja undulata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+247;2022; Precautionary approach;rju.27.7de;Raja undulata;Celtic Seas Ecoregion, Greater North Sea Ecoregion
+248;2017; Precautionary approach;rju.27.8ab;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+249;2018; Precautionary approach;rju.27.8ab;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+250;2019; Precautionary approach;rju.27.8ab;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+251;2020; Precautionary approach;rju.27.8ab;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+252;2021; Precautionary approach;rju.27.8ab;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+253;2022; Precautionary approach;rju.27.8ab;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+254;2011; No specific advice;rju.27.8c;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+255;2012; No specific advice;rju.27.8c;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+256;2013; No specific advice;rju.27.8c;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+257;2014; No specific advice;rju.27.8c;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+258;2017; Precautionary approach;rju.27.8c;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+259;2017; Precautionary approach;rju.27.9a;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+260;2018; Precautionary approach;rju.27.9a;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+261;2019; Precautionary approach;rju.27.9a;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+262;2020; Precautionary approach;rju.27.9a;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+263;2021; Precautionary approach;rju.27.9a;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+264;2022; Precautionary approach;rju.27.9a;Raja undulata;Bay of Biscay and the Iberian Coast Ecoregion
+265;2018;Quadrennial advice;sck.27.nea;Dalatias licha;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+266;2019;Quadrennial advice;sck.27.nea;Dalatias licha;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+267;2020;Precautionary approach;sck.27.nea;Dalatias licha;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+268;2021;Same advice as in 2020;sck.27.nea;Dalatias licha;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+269;2022;Same advice as in 2020;sck.27.nea;Dalatias licha;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+270;2023;Same advice as in 2020;sck.27.nea;Dalatias licha;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+271;2017; Biennial advice;sdv.27.nea;Mustelus asterias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+272;2018; Precautionary approach;sdv.27.nea;Mustelus asterias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+273;2020; Precautionary approach;sdv.27.nea;Mustelus asterias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+274;2021; Same advice as for 2020;sdv.27.nea;Mustelus asterias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+275;2022; Precautionary approach;sdv.27.nea;Mustelus asterias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+276;2023; Precautionary approach;sdv.27.nea;Mustelus asterias;Arctic Ocean Ecoregion, Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Barents Sea Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Greenland Sea Ecoregion, Iceland Sea Ecoregion, Greater North Sea Ecoregion, Norwegian Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+277;2017; Biennial advice;sho.27.67;Galeus melastomus;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+278;2018; Precautionary approach;sho.27.67;Galeus melastomus;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+279;2020; No catch advice requested;sho.27.67;Galeus melastomus;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+280;2021; No catch advice requested;sho.27.67;Galeus melastomus;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+281;2022; Precautionary approach;sho.27.67;Galeus melastomus;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+282;2023; Precautionary approach;sho.27.67;Galeus melastomus;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+283;2017; Same catch value as advised for 2016;sho.27.89a;Galeus melastomus;Bay of Biscay and the Iberian Coast Ecoregion
+284;2018; Precautionary approach;sho.27.89a;Galeus melastomus;Bay of Biscay and the Iberian Coast Ecoregion
+285;2020; No catch advice requested;sho.27.89a;Galeus melastomus;Bay of Biscay and the Iberian Coast Ecoregion
+286;2021; No catch advice requested;sho.27.89a;Galeus melastomus;Bay of Biscay and the Iberian Coast Ecoregion
+287;2022; No catch advice requested;sho.27.89a;Galeus melastomus;Bay of Biscay and the Iberian Coast Ecoregion
+288;2023; No catch advice requested;sho.27.89a;Galeus melastomus;Bay of Biscay and the Iberian Coast Ecoregion
+289;2016; Precautionary approach;syc.27.3a47d;Scyliorhinus canicula;Greater North Sea Ecoregion
+290;2018; Precautionary approach;syc.27.3a47d;Scyliorhinus canicula;Greater North Sea Ecoregion
+291;2020; Precautionary approach;syc.27.3a47d;Scyliorhinus canicula;Greater North Sea Ecoregion
+292;2021; Same advice as in ;syc.27.3a47d;Scyliorhinus canicula;Greater North Sea Ecoregion
+293;2022; Precautionary approach;syc.27.3a47d;Scyliorhinus canicula;Greater North Sea Ecoregion
+294;2023; Precautionary approach;syc.27.3a47d;Scyliorhinus canicula;Greater North Sea Ecoregion
+295;2015; No new advice, same as for ;syc.27.67a-ce-j;Scyliorhinus canicula;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+296;2018; Precautionary approach;syc.27.67a-ce-j;Scyliorhinus canicula;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+297;2020; Precautionary approach;syc.27.67a-ce-j;Scyliorhinus canicula;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+298;2021; Same advice as in ;syc.27.67a-ce-j;Scyliorhinus canicula;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+299;2022; Precautionary approach;syc.27.67a-ce-j;Scyliorhinus canicula;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+300;2023; Precautionary approach;syc.27.67a-ce-j;Scyliorhinus canicula;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+301;2017; Same catch advice as advised for 2016;syc.27.8abd;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+302;2018; Precautionary approach;syc.27.8abd;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+303;2020; No catch advice requested;syc.27.8abd;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+304;2021; No catch advice requested;syc.27.8abd;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+305;2022; No catch advice requested;syc.27.8abd;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+306;2023; No catch advice requested;syc.27.8abd;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+307;2017; Same catch value as advised for 2016;syc.27.8c9a;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+308;2018; Precautionary approach;syc.27.8c9a;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+309;2020; No catch advice requested;syc.27.8c9a;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+310;2021; No catch advice requested;syc.27.8c9a;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+311;2022; No catch advice requested;syc.27.8c9a;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+312;2023; No catch advice requested;syc.27.8c9a;Scyliorhinus canicula;Bay of Biscay and the Iberian Coast Ecoregion
+313;2017; Same catch value advised for ;syt.27.67;Scyliorhinus stellaris;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+314;2019; Precautionary approach (same advice as for );syt.27.67;Scyliorhinus stellaris;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+315;2020; No advice;syt.27.67;Scyliorhinus stellaris;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+316;2021; No advice;syt.27.67;Scyliorhinus stellaris;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+317;2022; Precautionary approach;syt.27.67;Scyliorhinus stellaris;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+318;2023; Precautionary approach;syt.27.67;Scyliorhinus stellaris;Celtic Seas Ecoregion, Greater North Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+319;2018;Quadrennial advice;thr.27.nea;Alopias;Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Iceland Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+320;2019;Quadrennial advice;thr.27.nea;Alopias;Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Iceland Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+321;2020;Precautionary approach;thr.27.nea;Alopias;Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Iceland Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+322;2021;Same advice as in 2020;thr.27.nea;Alopias;Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Iceland Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+323;2022;Same advice as in 2020;thr.27.nea;Alopias;Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Iceland Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion
+324;2023;Same advice as in 2020;thr.27.nea;Alopias;Azores Ecoregion, Bay of Biscay and the Iberian Coast Ecoregion, Celtic Seas Ecoregion, Faroes Ecoregion, Iceland Sea Ecoregion, Oceanic Northeast Atlantic Ecoregion

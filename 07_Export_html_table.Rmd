@@ -1,0 +1,169 @@
+---
+title: "Export_html_tables"
+author: "Pauline"
+date: '2022-05-06'
+output: html_document
+---
+
+# Purpose
+This file exports the table formatted as html. This is an easy and visual way to present the data. It is also possible to store it online using gh-pages and to simply share the link. Tutorial on how this works : https://pokyah.github.io/post/r_interactive_datavis_with_github_pages/.
+
+
+```{r setup, include = F}
+library(tidyverse)
+library(reactablefmtr)
+library(writexl)
+
+#colours
+library(IUCNpalette)
+library(readxl)
+IUCN_palette <- iucn_palette()
+IUCN_palette[1] <- "lightgray"
+IUCN_palette[8] <- "black"
+IUCN_palette[9] <- "lightskyblue"
+names_IUCN <- names(iucn_palettes)[1:8]
+
+#select species (take 'commentaire' to have outdated names as well)
+elasmo_FR <- read.csv("data\\elasmo_uicn_france.csv") %>% mutate(Genre = word(.$Species, 1))
+species_names <- c(elasmo_FR$Species, elasmo_FR$Species) %>% unique() %>% na.exclude()
+species_genre <- paste0(unique(elasmo_FR$Genre), " spp") %>% na.exclude()
+species_all <- c(species_names, species_genre)
+```
+
+# Load data
+```{r data}
+#df with names
+names_elasmo <- read_xlsx("data\\Elasmobranches_présents_FR.xlsx") %>% select(3:5)
+
+#final df
+Elasmo <- read_xlsx("data\\Elasmobranchs_final_table.xlsx") %>% left_join(., elasmo_FR[c("Species", "Groupe")]) %>% relocate(Groupe, .before = Species)
+```
+
+# Translate to French
+```{r}
+#translate
+unique(Elasmo$Region)
+
+Elasmo <- Elasmo %>%
+    select(-Before_last_evaluation, -Before_last_status) %>% #remove those cols
+  mutate(Region = case_when(
+    #UICN
+    Region == "Baltic Sea" ~ "Baltique",
+    Region == "Mediterranean Sea" ~ "Méditerranée",
+    Region == "Croatia" ~ "Croatie",
+    Region == "Italy" ~ "Italie",
+    Region == "Ireland" ~ "Irlande",
+    Region == "World" ~ "Monde",
+    Region == "Sweden" ~ "Suède",
+    Region == "Norway" ~"Norvège",
+    Region == "Albania" ~ "Albanie",
+    Region == "Germany" ~ "Allemagne",
+    Region == "United Kingdom" ~ "Royaume-Uni",
+    Region == "NE Atlantic" ~ "Atlantique NE",
+    Region == "Europe" ~ "Europe",
+    Region == "France" ~ "France",
+    
+    #other evals
+    #OSPAR
+    Region == "OSPAR IV - BBIC (POSH)" ~ "OSPAR IV - Golfe de Gascogne (POSH)",
+    Region == "OSPAR III - CS (POSH)" ~ "OSPAR III - Mers celtiques (POSH)",
+    Region == "OSPAR II - GNS (POSH)" ~ "OSPAR II - Mer du Nord (POSH)",
+    Region == "OSPAR IV - BBIC (FC1)" ~ "OSPAR IV - Golfe de Gascogne (FC1)",
+    Region == "OSPAR III - CS (FC1)" ~ "OSPAR III - Mers celtiques (FC1)",
+    Region == "OSPAR II - GNS (FC1)" ~ "OSPAR II - Mer du Nord (FC1)",
+    
+    #ICES
+    Region == "CS (ICES)" ~ "Mers celtiques (CIEM)",
+    Region == "Northern BBIC (ICES)" ~ "Golfe de Gascogne Nord (CIEM)",
+    Region == "Southern BBIC (ICES)" ~ "Golfe de Gascogne Sud (CIEM)",
+    Region == "Northern CS (ICES)" ~ "Mers celtiques Nord (CIEM)",
+    Region == "Southern CS (ICES)" ~ "Mers celtiques Sud (CIEM)",
+    Region == "NE Atlantic (ICES)" ~ "Atlantique NE (CIEM)",
+    Region == "GNS (ICES)" ~ "Mer du Nord (CIEM)",
+    
+    #RFMOs
+    Region == "Ligurian and Tyrrhenian Seas (GFCM)" ~ "Mers Ligurienne et Tyrrhénienne (CGPM)",
+    Region == "NE Atlantic (ICCAT)" ~ "Atlantique NE (CICTA)"
+  )) %>%
+  mutate(Level = ifelse(Level == "Regional", "Régional", Level)) %>% 
+  relocate(Last_status, .before = Status_evolution) %>% #change order
+  
+  #rename columns
+  rename(Espèce = Species,
+         `Nom commun` = Name_FR,
+         `Nom anglais` = Name_EN,
+         `Echelle d'évaluation` = Level,
+         `Zone / pays évalué(e)` = Region,
+         `Dernier statut` = Last_status,
+         `Tendance du statut` = Status_evolution,
+         `Années écoulées` = Years_apart,
+         `Dernière évaluation` = Last_evaluation)
+
+#Export it as French final table
+write_xlsx(Elasmo, "data\\Elasmobranchs_final_table_FR.xlsx")
+```
+
+
+# HTML final table
+```{r}
+#NAs as empty character for better vizualization
+Elasmo[is.na(Elasmo) == T] <- ""
+
+#source : https://stackoverflow.com/questions/65914989/conditional-formatting-multiple-columns-in-reactable
+#test
+iucn_cols <- function(x){
+  if(is.na(x) == T){""}
+  else if(x == "RE"){"darkred"}
+  else if(x == "CR"){"red"}
+  else if(x == "EN") {"orange"}
+  else if (x == "VU") {"gold"}
+  else if (x == "NT") {"forestgreen"}
+  else if (x == "LC") {"lightgreen" }
+  else if(x == "DD") {"lightgrey"}
+  else if(x == "Declining") {"sandybrown"}
+  else if(x == "Stable"){"yellow"}
+  else if(x == "Recovering"){"aquamarine"}
+  else if(x == "Increasing"){"aquamarine"}
+  else if(x == "Unknown"){"lightgrey"}
+  else if(x == "Good"){"lightgreen"}
+  else if(x == "Poor"){"sandybrown"}
+  else if(x == "3"){"lightblue"}
+  else if(x == "NA"){"white"}
+  else if(x == "Not applicable"){"white"}
+  else if(x == "Depleted"){"sandybrown"}
+  else if (x == "Decreasing"){"sandybrown"}
+  else if(x == "Very low"){"sandybrown"}
+  else{""}}
+
+stylefunc <- function(value, index, name) {
+  color <- iucn_cols(value)
+  list(background = color)
+}
+
+coldefs <- list(
+  reactable::colDef(style = stylefunc)
+)
+
+cols <- Elasmo %>% select("Dernier statut", 11:35) %>% colnames()
+
+#replicate list to required length
+coldefs <- rep(coldefs,length(cols))
+
+#name elements of list according to cols
+names(coldefs) <- cols
+
+#reactable package
+Elasmo_IUCN_html <- reactable(Elasmo,
+                  pagination = T, #all on one page
+                  filterable = T,
+                  showPageSizeOptions = T,
+                  onClick = "select", #select the row when you click
+                  highlight = T, #highlight the rows on hover
+                  striped = T, #strip rows
+                  columns = coldefs,
+                  defaultColDef = colDef(minWidth = 120)
+                )
+
+
+save_reactable_test(Elasmo_IUCN_html, "html_output/Résultats_OE_statuts.html")
+```

@@ -1,0 +1,43 @@
+﻿"Species","Name_FR","Name_EN","CITES_appendix","CITES_listing_year","CITES_EU_listing","CITES_party","CMS_appendix","UNCLOS","BERN_appendix","Barcelona_appendix","OSPAR","Shark.MoU"
+"Alopias superciliosus","Renard à gros yeux","Bigeye thresher","II","2016","B",NA,"II",1,NA,NA,NA,1
+"Alopias vulpinus","Requin-renard commun","Thresher","II","2016","B",NA,"II",1,NA,"III",NA,1
+"Carcharhinus brachyurus","Requin cuivré","Copper shark",NA,NA,NA,NA,NA,1,NA,NA,NA,NA
+"Carcharhinus brevipinna","Requin-tisserand","Spinner shark",NA,NA,NA,NA,NA,1,NA,NA,NA,NA
+"Carcharhinus limbatus","Requin bordé","Blacktip shark",NA,NA,NA,NA,NA,1,NA,NA,NA,NA
+"Carcharhinus plumbeus","Requin gris","Sandbar shark",NA,NA,NA,NA,NA,1,NA,"III",NA,NA
+"Carcharias taurus","Requin-taureau","Sand tiger shark",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Carcharodon carcharias","Grand requin blanc","Great white shark","II","2001","B",NA,"I / II",1,"II","II",NA,1
+"Centrophorus granulosus","Requin-chagrin","Gulper shark",NA,NA,NA,NA,NA,NA,NA,"III",1,NA
+"Centrophorus squamosus","Squale-chagrin de l'Atlantique","Leafscale gulper shark",NA,NA,NA,NA,NA,NA,NA,NA,1,NA
+"Centroscymnus coelolepis","Pailona commun","Portuguese dogfish",NA,NA,NA,NA,NA,NA,NA,NA,1,NA
+"Cetorhinus maximus","Requin-pèlerin","Basking shark","II","2000","B",NA,"I / II",1,"II","II",1,1
+"Dipturus batis","Pocheteau gris","Blue skate",NA,NA,NA,NA,NA,NA,NA,"II",1,NA
+"Galeocerdo cuvier","Requin tigre","Tiger shark",NA,NA,NA,NA,NA,1,NA,NA,NA,NA
+"Galeorhinus galeus","Requin hâ","Tope shark",NA,NA,NA,NA,"II",NA,NA,"II",NA,NA
+"Glaucostegus cemiculus","Raie-guitare fouisseuse","Blackchin guitarfish","II","2019","B",NA,NA,NA,NA,"II",NA,NA
+"Gymnura altavela","Raie-papillon épineuse","Spiny butterfly ray",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Heptranchias perlo","Perlon","Sharpnose sevengill shark",NA,NA,NA,NA,NA,NA,NA,"III",NA,NA
+"Hexanchus griseus","Griset","Bluntnose sixgill shark",NA,NA,NA,NA,NA,1,NA,NA,NA,NA
+"Isurus oxyrinchus","Requin-taupe bleu","Shortfin mako","II","2019","B",NA,"II",1,"III","II",NA,1
+"Lamna nasus","Requin-taupe commun","Porbeagle","II","2012","B",NA,"II",1,"III","II",1,1
+"Leucoraja circularis","Raie circulaire","Sandy ray",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Mobula mobular","Mante de méditerrannée","Devil fish","II","2016","B",NA,"I / II",NA,"II","II",NA,1
+"Mustelus asterias","Émissole tachetée","Starry smooth-hound",NA,NA,NA,NA,NA,NA,NA,"III",NA,NA
+"Mustelus mustelus","Émissole lisse","Smooth-hound",NA,NA,NA,NA,NA,NA,NA,"III",NA,NA
+"Mustelus punctulatus","Émissole pointillée","Blackspotted smooth-hound",NA,NA,NA,NA,NA,NA,NA,"III",NA,NA
+"Odontaspis ferox","Requin-féroce","Smalltooth sand tiger",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Oxynotus centrina","Centrine commune","Angular roughshark",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Prionace glauca","Requin peau bleau","Blue shark",NA,NA,NA,NA,"II",1,"III","III",NA,NA
+"Pristis pectinata","Poisson-scie tident","Smalltooth sawfish","I","2007","A",NA,"I / II",NA,NA,"II",NA,1
+"Pristis pristis","Poisson-scie commun","Common sawfish","I","2007","A",NA,"I / II",NA,NA,"II",NA,1
+"Raja clavata","Raie bouclée","Thornback ray",NA,NA,NA,NA,NA,NA,NA,NA,1,NA
+"Raja montagui","Raie douce","Spotted ray",NA,NA,NA,NA,NA,NA,NA,NA,1,NA
+"Rhinobatos rhinobatos","Raie-guitare commune","Common guitarfish",NA,NA,NA,NA,"II",NA,NA,"II",NA,1
+"Rostroraja alba","Raie blanche","White skate",NA,NA,NA,NA,NA,NA,"III","II",1,NA
+"Sphyrna lewini","Requin-marteau halicorne","Scalloped hammerhead","II","2012","B",NA,"II",1,NA,"II",NA,1
+"Sphyrna mokarran","Grand requin-marteau","Great hammerhead","II","2013","B",NA,"II",1,NA,"II",NA,1
+"Sphyrna zygaena","Requin-marteau commun","Smooth hammerhead","II","2013","B",NA,"II",1,NA,"II",NA,1
+"Squalus acanthias","Aiguillat commun","Picked dogfish",NA,NA,NA,NA,"II",NA,NA,"II",1,1
+"Squatina aculeata","Ange de mer épineux","Sawback angelshark",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Squatina oculata","Ange de mer ocellé","Smoothback angelshark",NA,NA,NA,NA,NA,NA,NA,"II",NA,NA
+"Squatina squatina","Ange de mer commun","Angelshark",NA,NA,NA,NA,"I / II",NA,"III",NA,1,1
